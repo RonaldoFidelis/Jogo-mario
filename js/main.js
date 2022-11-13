@@ -1,5 +1,6 @@
 const personagem = document.querySelector('.personagem');
 const fireBall = document.querySelector('.fire-ball')
+const btn = document.querySelector('.button');
 const jump = () => {
     personagem.classList.add('jump');
 
@@ -27,3 +28,4 @@ const loop = setInterval(() => {
 
 }, 10)
 document.addEventListener('keydown', jump);
+btn.addEventListener('click', jump);

@@ -5,7 +5,7 @@
 }
 
 body{
-    background: #000;
+    background: rgb(238, 237, 237);
 }
 .gamer-board {
     width: 80%;
@@ -50,6 +50,33 @@ body{
     animation: jump 500ms ease-out;
 }
 
+.buttons {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-26%,-40%);
+    display: flex;
+    gap: 20px;
+}
+
+/* Botões */
+.button {
+    width: 50%;
+    padding: 4%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: clamp(8px,5vw,1rem);
+    font-weight: 600;
+    color: #444;
+    box-shadow: -3px 4px 0 #222, -5px 7px 0 #000;
+    animation: 5s;
+}
+
+.button:active{
+    box-shadow: inset -4px 4px 0 #222;
+    font-size: 0.9rem
+}
 /* animação bill bala */
 @keyframes bill_animation{
     from {
