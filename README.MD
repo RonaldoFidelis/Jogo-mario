@@ -1,6 +1,6 @@
 ## GamerJump-Project
 
-<img src="../img/print.png">
+<img src='./img/print.png'>
 
 # Tecnologias
 
