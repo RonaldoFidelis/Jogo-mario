@@ -10,7 +10,7 @@
 
 # Detalhes do projeto
 
--  
+-  Projeto feito com HTML, CSS E JavaScript Puro, usando apenas logica de programação.
 
 # Link do projeto
 
