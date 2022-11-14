@@ -27,5 +27,5 @@ const loop = setInterval(() => {
     }
 
 }, 10)
-document.addEventListener('keydown', jump);
-btn.addEventListener('click', jump);
+document.addEventListener('click', jump);
+// btn.addEventListener('click', jump);
