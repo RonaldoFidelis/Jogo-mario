@@ -7,6 +7,11 @@
 body{
     background: rgb(0, 0, 0);
 }
+.placar{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30pt;
+    padding-left: 10px;
+}
 .gamer-board {
     width: 100%;
     height: 500px;
@@ -17,12 +22,12 @@ body{
     background: linear-gradient(#83ceec, #e0f6ff);
 }
 
-.fire-ball{
+.bolaDeFogo{
     transform: rotate(180deg);
     position: absolute;
     bottom: -30px;
     width: 120px;
-    animation: movie 2s infinite linear;
+    animation: lançarBolaDeFogo 2s infinite linear;
 }
 
 .personagem{
@@ -46,8 +51,8 @@ body{
     animation: nuvens 25s infinite linear; 
 }
 
-.jump{
-    animation: jump 500ms ease-out;
+.saltar{
+    animation: saltar 500ms ease-out;
 }
 
 .buttons {
@@ -78,7 +83,7 @@ body{
     font-size: 0.9rem
 }
 /* animação bill bala */
-@keyframes movie{
+@keyframes lançarBolaDeFogo{
     from {
         right: -80px; /*Animação para ele aparecer saindo da tele, em vez de surgir do nada.*/
     }
@@ -88,7 +93,7 @@ body{
     }
 }
 /* animação personagem pular */
-@keyframes jump{
+@keyframes saltar{
     0%{
         bottom: 0px; 
     }

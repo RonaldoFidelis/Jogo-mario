@@ -1,35 +1,56 @@
 const personagem = document.querySelector('.personagem');
-const fireBall = document.querySelector('.fire-ball')
-const btn = document.querySelector('.button');
+const bolaDeFogo = document.querySelector('.bolaDeFogo');
+const nuvem = document.querySelector('.nuvem');
+const nuvens = document.querySelector('.nuvens');
+const placar = document.querySelector('.placar');
+let contagem = 0;
 
-const jump = () => {
-    personagem.classList.add('jump');
+const saltoPersonagem = () => {
+    personagem.classList.add('saltar');
 
     setTimeout(() => {
-        personagem.classList.remove('jump');
+        personagem.classList.remove('saltar');
     }, 500)
 };
 
-const loop = setInterval(() => {
-    const fireBallPosition = fireBall.offsetLeft;
-    const personagemPositon = +window.getComputedStyle(personagem).bottom.replace('px', ' ')
 
-    if (fireBallPosition <= 85 && fireBallPosition > 0 && personagemPositon <= 25) {
-        fireBall.style.animation = 'none';
-        fireBall.style.left = `${fireBallPosition}px`;
+const verificarSalto = setInterval(() => {
+    const posiçãoBolaDeFogo = bolaDeFogo.offsetLeft;
+    const posiçãoNuvem = nuvem.offsetLeft;
+    const posiçãoNuvens = nuvens.offsetLeft;
+    const posiçãoPersonagem = +window.getComputedStyle(personagem).bottom.replace('px', ' ');
+
+    if (posiçãoBolaDeFogo <= 85 && posiçãoBolaDeFogo > 0 && posiçãoPersonagem <= 25) {
+        bolaDeFogo.style.animation = 'none';
+        bolaDeFogo.style.left = `${posiçãoBolaDeFogo}px`;
+
+        nuvens.style.animation = 'none';
+        nuvens.style.left = `${posiçãoNuvens}px`;
+        nuvem.style.animation = 'none';
+        nuvem.style.left = `${posiçãoNuvem}px`;
 
         personagem.style.animation = 'none';
-        personagem.style.bottom = `${personagemPositon}`;
+        personagem.style.bottom = `${posiçãoPersonagem}`;
 
         personagem.src = './img/gamerOver.png';
         personagem.style.width = '70px';
 
-        clearInterval(loop);
+        clearInterval(verificarSalto);
+        clearInterval(score);
 
+        document.addEventListener('click',() =>{
+            window.location.reload();
+        });
+        document.addEventListener('keydown',() =>{
+            window.location.reload();
+        });
     }
 
 }, 10);
 
-document.addEventListener('click', jump);
-document.addEventListener('keydown', jump);
-// btn.addEventListener('click', jump);
+const score = setInterval(() => {
+    contagem++;
+    placar.innerHTML = contagem;
+}, 1000)
+document.addEventListener('click', saltoPersonagem);
+document.addEventListener('keydown', saltoPersonagem);
