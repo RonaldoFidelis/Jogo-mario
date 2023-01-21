@@ -1,4 +1,4 @@
-## GamerJump-Project
+## Projeto - Mario JS
 
 <img src='./img/print.png'>
 
